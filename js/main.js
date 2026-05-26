@@ -1,7 +1,7 @@
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqejykbl'; // Replace with user's Formspree endpoint ID
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mykvnayk'; // Replace with user's Formspree endpoint ID
 
-const BACKGROUND_MUSIC_URL = '../lagu.mp3';
+const BACKGROUND_MUSIC_URL = '../music.mp3';
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- Initialize AOS ---
@@ -300,4 +300,110 @@ rsvpForm.addEventListener('submit', async (e) => {
   window.addEventListener('scroll', onScroll);
   // Trigger on initial page display to highlight proper section
   onScroll();
+
+  // ==========================================
+  // 10. GALLERY SLIDER CONTROLS
+  // ==========================================
+  const slider = document.getElementById('gallery-slider');
+  const prevBtn = document.getElementById('gallery-prev-btn');
+  const nextBtn = document.getElementById('gallery-next-btn');
+  const dotsContainer = document.getElementById('gallery-dots');
+  const items = slider ? slider.querySelectorAll('.gallery-item') : [];
+
+  if (slider && prevBtn && nextBtn && dotsContainer && items.length > 0) {
+    // Generate dots
+    items.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('slider-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        scrollToItem(index);
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.slider-dot');
+
+    const updateActiveDot = () => {
+      const scrollLeft = slider.scrollLeft;
+      
+      // Find which item is closest to the left edge of the slider viewport
+      let activeIndex = 0;
+      let minDistance = Infinity;
+
+      items.forEach((item, index) => {
+        const itemLeft = item.offsetLeft - slider.offsetLeft;
+        const distance = Math.abs(itemLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    };
+
+    const scrollToItem = (index) => {
+      const item = items[index];
+      if (item) {
+        slider.scrollTo({
+          left: item.offsetLeft - slider.offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    prevBtn.addEventListener('click', () => {
+      const scrollLeft = slider.scrollLeft;
+      
+      // Find current active item
+      let activeIndex = 0;
+      let minDistance = Infinity;
+      items.forEach((item, index) => {
+        const itemLeft = item.offsetLeft - slider.offsetLeft;
+        const distance = Math.abs(itemLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      // Go to previous item, wrap around to last if at first
+      const targetIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+      scrollToItem(targetIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const scrollLeft = slider.scrollLeft;
+      
+      // Find current active item
+      let activeIndex = 0;
+      let minDistance = Infinity;
+      items.forEach((item, index) => {
+        const itemLeft = item.offsetLeft - slider.offsetLeft;
+        const distance = Math.abs(itemLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      // Go to next item, wrap around to first if at last
+      const targetIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+      scrollToItem(targetIndex);
+    });
+
+    // Update active dot on scroll
+    let scrollTimeout;
+    slider.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateActiveDot, 100);
+    });
+  }
 });

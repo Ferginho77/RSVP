@@ -996,46 +996,141 @@ button, input, textarea, select {
 /* ==========================================================================
    GALLERY SECTION
    ========================================================================== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-gap: 1.5rem;
-  grid-auto-flow: dense;
+/* Gallery Slider Wrapper */
+.gallery-slider-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-gap: 1rem;
-  }
+/* Gallery Slider Viewport */
+.gallery-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
-@media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.8rem;
-  }
+.gallery-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
-@media (max-width: 375px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.5rem;
-  }
-}
-
+/* Gallery Slider Item */
 .gallery-item {
+  flex: 0 0 calc(33.333% - 1rem); /* 3 items visible on desktop */
+  scroll-snap-align: start;
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--card-shadow);
   cursor: pointer;
   aspect-ratio: 4 / 3;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
-/* Make some elements taller for a masonry-like grid */
-.gallery-item:nth-child(2n) {
-  aspect-ratio: 3 / 4;
+@media (max-width: 992px) {
+  .gallery-item {
+    flex: 0 0 calc(50% - 0.75rem); /* 2 items on tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-item {
+    flex: 0 0 100%; /* 1 item on mobile */
+  }
+}
+
+/* Slider Nav Buttons - Glassmorphism */
+.slider-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slider-nav-btn:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.slider-nav-btn.prev-btn {
+  left: -25px;
+}
+
+.slider-nav-btn.next-btn {
+  right: -25px;
+}
+
+/* Responsive adjustment for slider buttons */
+@media (max-width: 1240px) {
+  .slider-nav-btn.prev-btn {
+    left: -15px;
+  }
+  .slider-nav-btn.next-btn {
+    right: -15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+  .slider-nav-btn.prev-btn {
+    left: 5px;
+  }
+  .slider-nav-btn.next-btn {
+    right: 5px;
+  }
+}
+
+/* Dots Indicators */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.slider-dot.active {
+  background: var(--primary-color);
+  opacity: 1;
+  transform: scale(1.3);
+  width: 20px;
+  border-radius: 5px;
 }
 
 .gallery-img {
