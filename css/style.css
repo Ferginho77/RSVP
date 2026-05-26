@@ -242,9 +242,6 @@ button, input, textarea, select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: inherit;
-  filter: blur(4px);
-  z-index: -1;
 }
 
 .cover-content {
@@ -254,7 +251,6 @@ button, input, textarea, select {
   max-width: 600px;
   padding: 2.5rem;
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
