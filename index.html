@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wedding of Nisa & Hafid | Undangan Pernikahan Digital</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Undangan Pernikahan Digital Nisa & Hafid - VowsInteractive. Temukan informasi tanggal, lokasi, galeri, dan isi RSVP di sini.">
+  <meta name="keywords" content="Undangan Digital, Pernikahan Nisa Hafid, Digital Invitation, VowsInteractive, Wedding RSVP">
+  <meta name="author" content="VowsInteractive">
+  <meta property="og:title" content="The Wedding of Nisa & Hafid | Undangan Pernikahan Digital">
+  <meta property="og:description" content="Keluarga besar kami mengundang Anda untuk menghadiri pernikahan kami. Buka undangan untuk detail selengkapnya.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vowsinteractive.com/nisa-Hafid">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="scroll-locked">
+
+  <!-- ==========================================
+       COVER / HERO SCREEN (USER GATE)
+       ========================================== -->
+  <section id="cover-screen" class="cover-screen">
+    <div class="cover-bg-blur"></div>
+    <div class="cover-content text-center">
+      <p class="cover-subtitle animate-fade-in">THE WEDDING OF</p>
+      <h1 class="cover-title animate-zoom-in">Nisa & Hafid</h1>
+      <p class="cover-date animate-fade-in">Minggu, 5 Juli 2026</p>
+      
+      <div class="guest-card animate-slide-up">
+        <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+        <h3 id="guest-name-placeholder" class="guest-name">Tamu Undangan</h3>
+        <p class="guest-note">Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Hadir di Pernikahan Kami.</p>
+      </div>
+
+      <button id="btn-open-invitation" class="btn-primary animate-pulse-btn">
+        <i class="fa-solid fa-envelope-open mr-2"></i> Buka Undangan
+      </button>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FLOATING INTERACTION CONTROLS
+       ========================================== -->
+  <!-- Floating Music Toggle -->
+  <div id="music-widget" class="floating-widget music-widget hidden">
+    <button id="btn-music-toggle" class="btn-floating" aria-label="Toggle Music">
+      <i class="fa-solid fa-compact-disc disk-animation"></i>
+    </button>
+  </div>
+
+
+
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main id="main-content" class="main-content">
+    
+    <!-- Sticky Bottom Navigation Bar (Mobile-first UX) -->
+    <nav id="bottom-navbar" class="bottom-navbar">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#couple" class="nav-link active">
+            <i class="fa-solid fa-heart"></i>
+            <span>Mempelai</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#event" class="nav-link">
+            <i class="fa-solid fa-calendar-day"></i>
+            <span>Acara</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#gallery" class="nav-link">
+            <i class="fa-solid fa-images"></i>
+            <span>Galeri</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#guestbook" class="nav-link">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Ucapan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#gifts" class="nav-link">
+            <i class="fa-solid fa-gift"></i>
+            <span>Hadiah</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Decorative Top Wave / Background Details -->
+    <div class="nav-spacer"></div>
+
+    <!-- ==========================================
+         SECTION: COUPLE PROFILE
+         ========================================== -->
+    <section id="couple" class="section section-couple">
+      <div class="container text-center">
+        <div class="section-decor" data-aos="fade-up">
+          <i class="fa-solid fa-seedling accent-text title-icon"></i>
+        </div>
+        <h2 class="section-title" data-aos="fade-up">Mempelai Pernikahan</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-delay="100">
+         “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”
+
+ 
+
+(Qs. Ar-Rum : 21)
+        </p>
+
+        <div class="couple-grid">
+          <!-- Groom (Hafid) -->
+          <div class="couple-card groom" data-aos="fade-right">
+            <div class="couple-img-wrapper">
+              <!-- Fallback to elegant Unsplash image, local asset is assets/groom.jpg -->
+              <img src="img/photo3.png" 
+                   alt="Hafid Pratama" 
+                   class="couple-img" 
+                   loading="lazy" 
+                   onerror="this.src='https://via.placeholder.com/400x400?text=Hafid+Pratama'">
+            </div>
+            <h3 class="couple-name">Maulana Hafid Abdullah</h3> <br>
+            <h4 class="couple-name">(Hafid)</h4>
+            <p class="couple-parent">
+              Putra pertama dari <br>
+              <strong>Bapak Ridwan Anwar Musadad</strong> <br>
+              & <strong>Ibu Adiyanti</strong>
+            </p>
+          </div>
+
+          <!-- Divider Heart icon -->
+          <div class="couple-divider" data-aos="zoom-in">
+            <i class="fa-solid fa-heart pulse"></i>
+          </div>
+
+          <!-- Bride (Nisa) -->
+          <div class="couple-card bride" data-aos="fade-left">
+            <div class="couple-img-wrapper">
+              <!-- Fallback to elegant Unsplash image, local asset is assets/bride.jpg -->
+              <img src="img/photo2.png" 
+                   alt="Annisa Fitriani" 
+                   class="couple-img" 
+                   loading="lazy" 
+                  >
+            </div>
+            <h3 class="couple-name">Irmanda Melianisa Pratiwi</h3> <br>
+            <h4 class="couple-name">(Nisa)</h4>
+            <p class="couple-parent">
+              Putri pertama dari <br>
+              <strong>(Almh)Bapak Raden Agung Heryekti</strong> <br>
+              & <strong>Ibu Ina Nurbaeti</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: EVENT DETAILS
+         ========================================== -->
+    <section id="event" class="section section-event parallax-overlay">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-decor" data-aos="fade-up">
+            <i class="fa-solid fa-calendar-day accent-text title-icon"></i>
+          </div>
+          <h2 class="section-title text-white" data-aos="fade-up">Detail Acara</h2>
+          <p class="section-desc text-light" data-aos="fade-up" data-aos-delay="100">
+            Berikut jadwal dan lokasi rangkaian acara pernikahan kami. Kehadiran Anda adalah restu terindah bagi kami.
+          </p>
+        </div>
+
+        <div class="event-grid">
+          <!-- Akad Nikah Card -->
+          <div class="event-card glass-card" data-aos="zoom-in-right">
+            <div class="event-header">
+              <i class="fa-solid fa-clock-rotate-left card-icon"></i>
+              <h3>Akad Nikah</h3>
+            </div>
+            <div class="event-body">
+              <div class="info-row">
+                <i class="fa-solid fa-calendar"></i>
+                <div>
+                  <p class="info-title">Hari & Tanggal</p>
+                  <p class="info-value">Minggu, 5 Juli 2026</p>
+                </div>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                  <p class="info-title">Waktu</p>
+                  <p class="info-value">08.00 - Selesai</p>
+                </div>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <p class="info-title">Tempat</p>
+                  <p class="info-value">Villa Padi Cimahi</p>
+                  <p class="info-subvalue">Jl.Ciawitali No.6, Kel Citeureup, Kecamatan Cimahi Utara, Kota Cimahi,Sebelah ruko lumbung Padi</p>
+                </div>
+              </div>
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Nisa+%26+Hafid&dates=20260712T010000Z/20260712T030000Z&details=Akad+Nikah+Nisa+%26+Hafid" 
+                 target="_blank" 
+                 class="btn-outline-white w-full text-center mt-4" 
+                 rel="noopener noreferrer">
+                <i class="fa-solid fa-calendar-plus mr-2"></i> Tambah Ke Kalender
+              </a>
+            </div>
+          </div>
+
+          <!-- Resepsi Card -->
+          <div class="event-card glass-card" data-aos="zoom-in-left">
+            <div class="event-header">
+              <i class="fa-solid fa-champagne-glasses card-icon"></i>
+              <h3>Resepsi Pernikahan</h3>
+            </div>
+            <div class="event-body">
+              <div class="info-row">
+                <i class="fa-solid fa-calendar"></i>
+                <div>
+                  <p class="info-title">Hari & Tanggal</p>
+                  <p class="info-value">Minggu, 5 Juli 2026</p>
+                </div>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                  <p class="info-title">Waktu</p>
+                  <p class="info-value">10.30 - 12.00 WIB</p>
+                </div>
+              </div>
+              <div class="info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <p class="info-title">Tempat</p>
+                  <p class="info-value">Villa Padi Cimahi</p>
+                  <p class="info-subvalue">Jl.Ciawitali No.6, Kel Citeureup, Kecamatan Cimahi Utara, Kota Cimahi,Sebelah ruko lumbung Padi</p>
+                </div>
+              </div>
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Nisa+%26+Hafid&dates=20260712T040000Z/20260712T090000Z&details=Resepsi+Pernikahan+Nisa+%26+Hafid" 
+                 target="_blank" 
+                 class="btn-outline-white w-full text-center mt-4" 
+                 rel="noopener noreferrer">
+                <i class="fa-solid fa-calendar-plus mr-2"></i> Tambah Ke Kalender
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Card -->
+        <div class="map-container glass-card" data-aos="fade-up">
+          <h3 class="map-title text-center text-white"><i class="fa-solid fa-map-location-dot mr-2"></i> Peta Lokasi Acara</h3>
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2009747565535!2d107.5528434!3d-6.8665039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e580005cbdd7%3A0x84d6787f6291a8db!2sCIAWITALI%20RESIDENCE!5e0!3m2!1sid!2sid!4v1779630631620!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="text-center mt-4">
+            <a href="https://maps.app.goo.gl/uX73xQ98ZryR9j5r5" target="_blank" class="btn-primary inline-flex align-items-center" rel="noopener noreferrer">
+              <i class="fa-solid fa-diamond-turn-right mr-2"></i> Petunjuk Rute (Google Maps)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: GALLERY
+         ========================================== -->
+    <section id="gallery" class="section section-gallery">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-decor" data-aos="fade-up">
+            <i class="fa-solid fa-images accent-text title-icon"></i>
+          </div>
+          <h2 class="section-title" data-aos="fade-up">Galeri Momen Indah</h2>
+        </div>
+
+        <!-- Masonry Grid with Lazy Loading images -->
+        <div class="gallery-grid" data-aos="fade-up">
+          <div class="gallery-item">
+            <img src="img/photo3.png" 
+                 alt="Wedding Moment 1" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 onerror="this.src='https://via.placeholder.com/500x350?text=Gallery+1'">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/photo4.png" 
+                 alt="Wedding Moment 2" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 onerror="this.src='https://via.placeholder.com/500x650?text=Gallery+2'">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/layer.png" 
+                 alt="Wedding Moment 3" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 onerror="this.src='https://via.placeholder.com/500x350?text=Gallery+3'">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/photo6.png" 
+                 alt="Wedding Moment 4" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 onerror="this.src='https://via.placeholder.com/500x350?text=Gallery+4'">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/photo2.png" 
+                 alt="Wedding Moment 5" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 onerror="this.src='https://via.placeholder.com/500x650?text=Gallery+5'">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/photo1.png" 
+                 alt="Wedding Moment 6" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 onerror="this.src='https://via.placeholder.com/500x350?text=Gallery+6'">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fullscreen Lightbox Modal for Gallery -->
+    <div id="lightbox-modal" class="lightbox-modal">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged gallery photo">
+    </div>
+
+    <!-- ==========================================
+         SECTION: RSVP & GUESTBOOK
+         ========================================== -->
+    <section id="guestbook" class="section section-guestbook bg-soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-decor" data-aos="fade-up">
+            <i class="fa-solid fa-book-open accent-text title-icon"></i>
+          </div>
+          <h2 class="section-title" data-aos="fade-up">Buku Tamu & Ucapan</h2>
+        </div>
+
+        <div class="guestbook-grid">
+          <!-- RSVP Form Card -->
+          <div class="guestbook-form-card card-shadow" data-aos="fade-right">
+            <h3>Konfirmasi Kehadiran</h3>
+            
+            <!-- Replace action URL with your Formspree endpoint in main.js configuration -->
+            <form id="rsvp-form" class="rsvp-form">
+              <div class="form-group">
+                <label for="input-name"><i class="fa-solid fa-user mr-1"></i> Nama Lengkap</label>
+                <input type="text" id="input-name" name="name" class="form-control" placeholder="Tulis nama Anda..." required>
+              </div>
+
+              <div class="form-group">
+                <label><i class="fa-solid fa-circle-question mr-1"></i> Konfirmasi Kehadiran</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="attendance" value="Hadir" checked required>
+                    <span class="custom-radio"></span> Hadir
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="attendance" value="Tidak Hadir">
+                    <span class="custom-radio"></span> Tidak Hadir
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="input-message"><i class="fa-solid fa-comment-dots mr-1"></i> Doa Restu & Ucapan</label>
+                <textarea id="input-message" name="message" class="form-control" rows="4" placeholder="Tulis ucapan selamat & doa terbaik Anda..." required></textarea>
+              </div>
+
+              <button type="submit" id="btn-submit-rsvp" class="btn-primary w-full">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Ucapan & RSVP
+              </button>
+              
+              <!-- Form Status Alerts -->
+              <div id="rsvp-alert-success" class="alert alert-success hidden mt-3">
+                <i class="fa-solid fa-circle-check mr-2"></i> Ucapan berhasil dikirim dan tersimpan! Terima kasih.
+              </div>
+              <div id="rsvp-alert-error" class="alert alert-danger hidden mt-3">
+                <i class="fa-solid fa-circle-xmark mr-2"></i> Terjadi kesalahan saat mengirim. Silakan coba lagi.
+              </div>
+            </form>
+          </div>
+
+          <!-- Dynamic Wishes Feed Card -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION: DIGITAL ENVELOPE / GIFTS
+         ========================================== -->
+    <section id="gifts" class="section section-gifts text-center">
+      <div class="container">
+        <div class="section-decor" data-aos="fade-up">
+          <i class="fa-solid fa-gift accent-text title-icon"></i>
+        </div>
+        <h2 class="section-title" data-aos="fade-up">Kado Digital & Amplop</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-delay="100">
+          Doa restu Anda merupakan karunia terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih secara digital, Anda dapat mentransfer melalui saluran berikut:
+        </p>
+
+        <div class="gift-actions" data-aos="zoom-in" data-aos-delay="200">
+          <button id="btn-trigger-gift-modal" class="btn-primary btn-large">
+            <i class="fa-solid fa-credit-card mr-2"></i> Kirim Hadiah / Amplop Digital
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Envelope Modal Dialog -->
+    <div id="gift-modal" class="gift-modal">
+      <div class="modal-content glass-card">
+        <div class="modal-header">
+          <h3>Kado Digital & Amplop</h3>
+          <span class="modal-close" id="btn-close-gift-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+
+          <div class="bank-accounts-list">
+            <!-- Account 1 -->
+            <div class="bank-card">
+              <div class="bank-header">
+                <span class="bank-name">BANK CIMB NIAGA</span>
+                <span class="bank-logo-placeholder">CIMB NIAGA</span>
+              </div>
+              <div class="bank-body">
+                <p class="account-number-label">Nomor Rekening</p>
+                <div class="account-number-wrapper">
+                  <span class="account-number" id="acc-num-1">706646318700</span>
+                  <button class="btn-copy" data-target="acc-num-1" title="Copy Rekening">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+                <p class="account-holder">a.n. Maulana Hafid</p>
+              </div>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         FOOTER SECTION
+         ========================================== -->
+    <footer class="footer text-center">
+      <div class="container">
+        <h2 class="footer-couple">Nisa & Hafid</h2>
+        <p class="footer-thanks">Terima kasih atas doa restu dan kehadiran Anda di hari bahagia kami.</p>
+        <p class="footer-credits">&copy; 2026 VowsInteractive. All Rights Reserved. Crafted with <i class="fa-solid fa-heart accent-text"></i></p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <!-- AOS (Animate On Scroll) JS Library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  
+  <!-- App Main Scripts -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
