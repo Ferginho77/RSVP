@@ -1,14 +1,6 @@
-/* ==========================================================================
-   VOWSINTERACTIVE - INTERACTIVE CONTROLLER
-   ========================================================================== */
 
-// Configuration Constants
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqejykbl'; // Replace with user's Formspree endpoint ID
 
-// Default Guestbook wishes to show on initial load if LocalStorage is empty
-
-
-// Sound track selection: Elegant piano wedding theme
 const BACKGROUND_MUSIC_URL = '../lagu.mp3';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -47,19 +39,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnTriggerGiftModal = document.getElementById('btn-trigger-gift-modal');
   const btnCloseGiftModal = document.getElementById('btn-close-gift-modal');
 
-  // ==========================================
-  // 1. GUEST NAME PARSER (URL PARAMETER)
-  // ==========================================
-  const parseGuestName = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const guestName = urlParams.get('to');
-    const placeholder = document.getElementById('guest-name-placeholder');
-    
-    if (guestName && placeholder) {
-      placeholder.textContent = decodeURIComponent(guestName);
-    }
-  };
-  parseGuestName();
+// ==========================================
+// 1. GUEST NAME PARSER (URL PARAMETER)
+// ==========================================
+const parseGuestName = () => {
+  const placeholder = document.getElementById("guest-name-placeholder");
+
+  if (!placeholder) return;
+
+  const params = new URLSearchParams(window.location.search);
+  let guestName = params.get("to");
+
+  // fallback
+  if (!guestName) {
+    placeholder.textContent = "Tamu Undangan";
+    return;
+  }
+
+  // handle + => spasi
+  guestName = guestName.replace(/\+/g, " ");
+
+  // decode url
+  guestName = decodeURIComponent(guestName);
+
+  // rapikan spasi ganda
+  guestName = guestName.trim().replace(/\s+/g, " ");
+
+  // limit biar tidak kepanjangan
+  if (guestName.length > 50) {
+    guestName = guestName.substring(0, 50);
+  }
+
+  placeholder.textContent = guestName;
+};
+
+// jalankan saat DOM siap
+document.addEventListener("DOMContentLoaded", parseGuestName);
 
   // ==========================================
   // 2. AUDIO MUSIC PLAYER
